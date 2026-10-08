@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta content="web_standard" name="shell-type" />
+  <title>GuardianDrive | Automotive Telematics &amp; Accident Response</title>
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <style>
+    @layer base {
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        overscroll-behavior: none;
+      }
+
+      main> :first-child {
+        margin-top: 0 !important;
+      }
+
+      main> :last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script
+    id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-secondary-fixed-variant": "#B8B8BA", "inverse-surface": "#F5F5F3", "on-primary-fixed": "#181818", "secondary": "#A7A7A9", "tertiary-fixed-dim": "#8FC7A8", "surface-container-high": "#292929", "surface-container": "#222222", "on-tertiary-container": "#B8DFC7", "on-tertiary-fixed-variant": "#315A42", "secondary-container": "#303032", "outline-variant": "#3D3D3F", "on-primary-fixed-variant": "#454547", "error-container": "#3A2423", "secondary-fixed": "#D6D6D8", "primary-fixed": "#E2E2E2", "secondary-fixed-dim": "#BDBDBF", "on-surface-variant": "#A7A7A9", "surface": "#171717", "tertiary": "#8FC7A8", "on-error-container": "#FFB8B2", "surface-container-lowest": "#101010", "surface-tint": "#D8D8D6", "on-tertiary-fixed": "#193A27", "surface-dim": "#111111", "surface-variant": "#252525", "inverse-primary": "#303030", "surface-bright": "#303030", "background": "#171717", "on-primary": "#171717", "surface-container-low": "#1D1D1D", "primary-container": "#E5E5E3", "on-background": "#F5F5F3", "inverse-on-surface": "#1C1C1C", "surface-container-highest": "#333333", "on-secondary-fixed": "#1B1B1D", "on-surface": "#F5F5F3", "primary": "#E5E5E3", "on-secondary": "#FFFFFF", "tertiary-fixed": "#A7D8B9", "outline": "#737375", "error": "#FF453A", "tertiary-container": "#244333", "primary-fixed-dim": "#C7C7C5", "on-error": "#FFFFFF", "on-primary-container": "#222222", "on-secondary-container": "#C8C8CA", "on-tertiary": "#15231B" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin": "1rem", "gutter": "1rem", "space-xl": "2rem", "space-md": "1rem", "margin-md": "1.5rem", "space-2xl": "3rem", "space-sm": "0.5rem", "space-lg": "1.5rem", "space-xs": "0.25rem", "gutter-lg": "1.5rem", "margin-lg": "2.5rem" }, "fontFamily": { "telemetry-num": ["Inter"], "body-md": ["Inter"], "display-lg-mobile": ["Inter"], "headline-md": ["Inter"], "display-lg": ["Inter"], "headline-lg": ["Inter"], "body-lg": ["Inter"], "body-sm": ["Inter"], "headline-sm": ["Inter"], "headline-lg-mobile": ["Inter"], "label-md": ["Inter"], "title-md": ["Inter"], "label-lg": ["Inter"], "label-sm": ["Inter"] }, "fontSize": { "telemetry-num": ["28px", { "lineHeight": "32px", "letterSpacing": "-0.03em", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "display-lg": ["44px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "headline-lg-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "title-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600" }], "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "700" }] } } } };</script>
+</head>
+
+<body class="bg-surface font-body-md text-on-surface antialiased">
+  <header
+    class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest/95 backdrop-blur-md border-b border-outline-variant/30 shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+    <div class="h-20 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between"><a
+        class="flex items-center gap-space-sm focus:outline-none focus:ring-2 focus:ring-primary-container rounded"
+        data-path="overview" href="#">
+        <div
+          class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center text-on-primary shadow-sm">
+          <span class="material-symbols-outlined text-[24px]">verified_user</span>
+        </div>
+        <div class="flex flex-col"><span
+            class="font-headline-sm text-headline-sm tracking-tight text-on-surface font-bold leading-none">Guardian<span
+              class="text-primary-container">Drive</span></span><span
+            class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mt-0.5">Mission Critical
+            Telematics</span></div>
+      </a>
+      <nav class="hidden lg:flex items-center gap-8" data-active-classes="text-primary font-bold"><a
+          class="font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors duration-150"
+          data-path="how-it-works" href="#">How It Works</a><a
+          class="font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors duration-150"
+          data-path="technology" href="#">Technology</a><a
+          class="font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors duration-150"
+          data-path="safety-architecture" href="#">Safety Architecture</a><a
+          class="font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors duration-150"
+          data-path="live-demo" href="#">Live Demo</a></nav>
+      <div class="flex items-center gap-4"><a
+          class="hidden sm:inline-flex items-center justify-center font-label-lg text-label-lg text-on-surface hover:text-primary transition-colors px-4 py-2"
+          data-path="sign-in" href="#">Sign In</a><a
+          class="inline-flex items-center justify-center min-h-[48px] px-6 rounded-lg bg-primary-container text-on-primary font-label-lg text-label-lg hover:bg-primary transition-colors duration-150 shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-container"
+          data-path="simulator-launch" href="#">Launch Simulator</a>
+        <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center ml-1"><span
+            class="material-symbols-outlined text-on-primary text-[18px]">person</span></div>
+      </div>
+    </div>
+  </header>
+  <main class="w-full pt-20 bg-surface">
+    <div class="flex flex-col w-full">
+      <!-- Top Ambient Telematics Banner -->
+      <section class="w-full bg-surface-container-lowest px-6 lg:px-12 py-3 border-b border-outline-variant/30">
+        <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4">
+          <div class="flex items-center gap-3">
+            <span
+              class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm tracking-wider uppercase">
+              <span class="w-2 h-2 rounded-full bg-tertiary-container animate-pulse"></span>
+              Operational Status
+            </span>
+            <span class="font-body-sm text-body-sm text-secondary">
+              Edge Neural Pipeline v4.28 • 100Hz IMU Telemetry Stream • Fail-Safe Protocols Active
+            </span>
+          </div>
+          <div class="flex items-center gap-6 font-label-sm text-label-sm text-on-surface-variant">
+            <span class="flex items-center gap-1">
+              <span class="material-symbols-outlined text-[15px] text-tertiary">check_circle</span>
+              Latency: <strong class="text-on-surface font-semibold ml-0.5">14ms</strong>
+            </span>
+            <span class="hidden md:flex items-center gap-1">
+              <span class="material-symbols-outlined text-[15px] text-primary">satellite_alt</span>
+              GNSS: <strong class="text-on-surface font-semibold ml-0.5">Dual-Band RTK</strong>
+            </span>
+            <span class="hidden sm:flex items-center gap-1">
+              <span class="material-symbols-outlined text-[15px] text-on-surface">lock</span>
+              Cipher: <strong class="text-on-surface font-semibold ml-0.5">AES-256 P2P</strong>
+            </span>
+          </div>
+        </div>
+      </section>
+      <!-- 1. HERO SECTION -->
+      <section class="relative w-full bg-surface px-6 lg:px-12 pt-12 pb-20 overflow-hidden">
+        <!-- Subtle Background Structural Grid Lines -->
+        <div class="absolute inset-0 pointer-events-none opacity-[0.03]"
+          style="background-image: radial-gradient(#003fad 1px, transparent 1px); background-size: 24px 24px;"></div>
+        <div class="max-w-7xl mx-auto relative z-10">
+          <!-- Hero Top Meta -->
+          <div class="flex flex-col items-start max-w-4xl space-y-6">
+            <!-- <div
+              class="inline-flex items-center gap-2 px-3 py-1 rounded bg-secondary-container/50 border border-secondary-container">
+              <span class="material-symbols-outlined text-primary text-[18px]">security</span>
+              <span class="font-label-md text-label-md tracking-wider text-on-primary-fixed uppercase font-semibold">
+                Next-Generation Automotive Telematics • Edge AI Verified
+              </span>
+            </div> -->
+            <h1 class="font-display-lg text-display-lg text-on-surface font-bold tracking-tight text-balance">
+              When the road changes, <span class="text-primary-container">GuardianDrive</span> responds.
+            </h1>
+            <p class="font-body-lg text-body-lg text-secondary max-w-3xl leading-relaxed">
+              A dual-stage automotive safety platform that continuously monitors driver alertness, detects severe crash
+              dynamics at 100Hz, and automatically escalates telemetry to trusted guardians when seconds matter.
+            </p>
+            <!-- CTA Action Cluster -->
+            <div class="flex flex-wrap items-center gap-4 pt-2">
+              <a class="inline-flex items-center justify-center gap-2 h-12 px-7 rounded-lg bg-primary-container text-on-primary font-label-lg text-label-lg hover:bg-primary transition-all shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-container"
+                data-path="live-demo" href="#">
+                <span class="material-symbols-outlined text-[20px]">play_circle</span>
+                Launch Live Simulator
+              </a>
+              <a class="inline-flex items-center justify-center gap-2 h-12 px-6 rounded-lg bg-surface-container-lowest text-on-surface font-label-lg text-label-lg border border-outline-variant/40 hover:bg-surface-container transition-all"
+                href="#safety-architecture">
+                <span class="material-symbols-outlined text-[20px] text-secondary">account_tree</span>
+                Explore Safety Architecture
+              </a>
+              <span class="text-secondary font-body-sm text-body-sm hidden sm:inline-block pl-2">
+                Zero cloud dependency for crash fail-safe
+              </span>
+            </div>
+          </div>
+          <!-- Trust Metrics Bar -->
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 pt-8 border-t border-outline-variant/30">
+            <div
+              class="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant/30 shadow-sm flex flex-col justify-between">
+              <span class="font-label-sm text-label-sm uppercase text-secondary tracking-wider">Inference Speed</span>
+              <div class="flex items-baseline gap-1.5 mt-2">
+                <span class="font-telemetry-num text-telemetry-num text-on-surface">14</span>
+                <span class="font-label-lg text-label-lg text-primary font-semibold">ms</span>
+              </div>
+              <span class="font-body-sm text-body-sm text-on-surface-variant mt-1">Edge Neural Latency</span>
+            </div>
+            <div
+              class="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant/30 shadow-sm flex flex-col justify-between">
+              <span class="font-label-sm text-label-sm uppercase text-secondary tracking-wider">Inertial Polling</span>
+              <div class="flex items-baseline gap-1.5 mt-2">
+                <span class="font-telemetry-num text-telemetry-num text-on-surface">100</span>
+                <span class="font-label-lg text-label-lg text-primary font-semibold">Hz</span>
+              </div>
+              <span class="font-body-sm text-body-sm text-on-surface-variant mt-1">IMU 6-Axis Sample Rate</span>
+            </div>
+            <div
+              class="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant/30 shadow-sm flex flex-col justify-between">
+              <span class="font-label-sm text-label-sm uppercase text-secondary tracking-wider">Cancellation
+                Buffer</span>
+              <div class="flex items-baseline gap-1.5 mt-2">
+                <span class="font-telemetry-num text-telemetry-num text-on-surface">10</span>
+                <span class="font-label-lg text-label-lg text-tertiary-container font-semibold">sec</span>
+              </div>
+              <span class="font-body-sm text-body-sm text-on-surface-variant mt-1">Fail-Safe Override Window</span>
+            </div>
+            <div
+              class="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant/30 shadow-sm flex flex-col justify-between">
+              <span class="font-label-sm text-label-sm uppercase text-secondary tracking-wider">Stream Protocol</span>
+              <div class="flex items-baseline gap-1.5 mt-2">
+                <span class="font-telemetry-num text-telemetry-num text-on-surface">AES-256</span>
+              </div>
+              <span class="font-body-sm text-body-sm text-on-surface-variant mt-1">End-to-End P2P Telemetry</span>
+            </div>
+          </div>
+          <!-- Hero Dashboard Composite Preview -->
+          <div
+            class="mt-12 bg-surface-container-lowest rounded-2xl border border-outline-variant/50 p-4 lg:p-6 shadow-md">
+            <!-- Cockpit Header Bar -->
+            <div class="flex flex-wrap items-center justify-between pb-4 mb-4 border-b border-outline-variant/30 gap-4">
+              <div class="flex items-center gap-3">
+                <span class="inline-flex p-1.5 bg-primary-container/10 text-primary-container rounded">
+                  <span class="material-symbols-outlined text-[20px]">monitor_heart</span>
+                </span>
+                <div>
+                  <div class="font-title-md text-title-md text-on-surface">Unified Telematics Dual Console</div>
+                  <div class="font-body-sm text-body-sm text-secondary">Session ID: GD-9482-SYS • Vehicle: Polestar 2 EV
+                  </div>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <span
+                  class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-tertiary/10 text-tertiary font-label-md text-label-md font-semibold">
+                  <span class="w-2 h-2 rounded-full bg-tertiary animate-ping"></span>
+                  ALL SYSTEMS SYNCHRONIZED
+                </span>
+              </div>
+            </div>
+            <!-- Cockpit Split View (Side-by-Side) -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+              <!-- Left: Driver Cabin HUD preview -->
+              <div
+                class="lg:col-span-6 bg-surface-container-low rounded-xl p-5 border border-outline-variant/30 flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between pb-3 border-b border-outline-variant/20">
+                    <div class="flex items-center gap-2">
+                      <span class="material-symbols-outlined text-primary text-[20px]">visibility</span>
+                      <span class="font-title-md text-title-md text-on-surface">In-Cabin Driver Vigilance HUD</span>
+                    </div>
+                    <span
+                      class="px-2.5 py-0.5 rounded bg-tertiary/10 text-tertiary font-label-sm text-label-sm font-bold tracking-wide">
+                      SAFE — ATTENTIVE
+                    </span>
+                  </div>
+                  <!-- Driver Face Mock Card -->
+                  <div
+                    class="mt-4 relative bg-surface-container-lowest rounded-lg p-4 border border-outline-variant/30 overflow-hidden">
+                    <div class="flex items-start justify-between">
+                      <div class="flex items-center gap-3">
+                        <div
+                          class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center font-headline-sm text-headline-sm text-primary font-bold">
+                          MR
+                        </div>
+                        <div>
+                          <div class="font-title-md text-title-md text-on-surface">Mohammad R.</div>
+                          <div class="font-body-sm text-body-sm text-secondary">Active Pilot • 68 Facial Mesh Landmarks
+                          </div>
+                        </div>
+                      </div>
+                      <span
+                        class="inline-flex items-center gap-1 font-label-sm text-label-sm text-tertiary font-semibold">
+                        <span class="material-symbols-outlined text-[16px]">graphic_eq</span>
+                        60 FPS
+                      </span>
+                    </div>
+                    <!-- Facial Feature Visual Graphic -->
+                    <div class="mt-4 p-3 bg-surface-container rounded-md flex items-center justify-between">
+                      <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-[18px] text-primary">face</span>
+                        <span class="font-body-sm text-body-sm text-on-surface">Gaze Alignment: Horizon Centered</span>
+                      </div>
+                      <span class="font-label-sm text-label-sm text-secondary font-mono">X: 0.02 | Y: -0.01</span>
+                    </div>
+                  </div>
+                  <!-- Real-time Metrics -->
+                  <div class="grid grid-cols-2 gap-3 mt-4">
+                    <div class="bg-surface-container-lowest p-3.5 rounded-lg border border-outline-variant/30">
+                      <div class="flex items-center justify-between">
+                        <span class="font-label-sm text-label-sm text-secondary">Eye Aspect Ratio (EAR)</span>
+                        <span class="material-symbols-outlined text-[16px] text-tertiary">check</span>
+                      </div>
+                      <div class="font-telemetry-num text-telemetry-num text-on-surface mt-1">0.31</div>
+                      <div class="font-body-sm text-body-sm text-secondary mt-0.5">Threshold: &gt;0.25 (Nominal)</div>
+                    </div>
+                    <div class="bg-surface-container-lowest p-3.5 rounded-lg border border-outline-variant/30">
+                      <div class="flex items-center justify-between">
+                        <span class="font-label-sm text-label-sm text-secondary">Tri-Axial G-Force</span>
+                        <span class="material-symbols-outlined text-[16px] text-primary">speed</span>
+                      </div>
+                      <div class="font-telemetry-num text-telemetry-num text-on-surface mt-1">0.04 <span
+                          class="font-body-sm text-body-sm text-secondary font-normal">G</span></div>
+                      <div class="font-body-sm text-body-sm text-secondary mt-0.5">Crash Floor: &gt;2.50 G</div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Footer Alert State -->
+                <div
+                  class="mt-4 pt-3 border-t border-outline-variant/20 flex items-center justify-between font-label-sm text-label-sm">
+                  <span class="text-secondary">Ocular Closure Frequency: <strong
+                      class="text-on-surface">14/min</strong></span>
+                  <span class="text-tertiary font-semibold flex items-center gap-1">
+                    <span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                    Fatigue Risk: Minimal
+                  </span>
+                </div>
+              </div>
+              <!-- Right: Guardian Remote Telemetry preview -->
+              <div
+                class="lg:col-span-6 bg-surface-container-low rounded-xl p-5 border border-outline-variant/30 flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between pb-3 border-b border-outline-variant/20">
+                    <div class="flex items-center gap-2">
+                      <span class="material-symbols-outlined text-primary-container text-[20px]">cell_tower</span>
+                      <span class="font-title-md text-title-md text-on-surface">Guardian Remote Companion</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span
+                        class="px-2.5 py-0.5 rounded bg-primary/10 text-primary font-label-sm text-label-sm font-semibold">
+                        Guardian: Sara R.
+                      </span>
+                    </div>
+                  </div>
+                  <!-- Vector Map Simulated Container -->
+                  <div
+                    class="mt-4 bg-surface-container-lowest rounded-lg p-4 border border-outline-variant/30 relative">
+                    <div class="flex items-center justify-between mb-3">
+                      <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-[18px] text-primary">navigation</span>
+                        <span class="font-title-md text-title-md text-on-surface">US-101 Northbound (Mile 414.2)</span>
+                      </div>
+                      <span
+                        class="font-label-sm text-label-sm text-tertiary font-bold px-2 py-0.5 rounded bg-tertiary/10">
+                        LIVE P2P
+                      </span>
+                    </div>
+                    <!-- Vector Map Visualization -->
+                    <div
+                      class="relative w-full h-32 bg-surface-container rounded-lg overflow-hidden flex items-center justify-center border border-outline-variant/30">
+                      <!-- Road Graphic -->
+                      <div class="absolute inset-0 flex items-center justify-center">
+                        <div
+                          class="w-full h-12 bg-outline-variant/30 transform -rotate-6 relative flex items-center justify-around">
+                          <div class="w-full border-t border-dashed border-surface-container-lowest"></div>
+                          <!-- Vehicle Pin Marker -->
+                          <div
+                            class="absolute left-1/2 -top-2 transform -translate-x-1/2 bg-primary text-on-primary w-8 h-8 rounded-full flex items-center justify-center shadow-lg">
+                            <span class="material-symbols-outlined text-[16px]">directions_car</span>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Floating HUD elements -->
+                      <div
+                        class="absolute bottom-2 left-2 bg-surface-container-lowest/90 backdrop-blur-sm px-2.5 py-1 rounded text-on-surface font-label-sm text-label-sm shadow-sm">
+                        Heading: 342° NNW
+                      </div>
+                      <div
+                        class="absolute top-2 right-2 bg-surface-container-lowest/90 backdrop-blur-sm px-2.5 py-1 rounded text-on-surface font-label-sm text-label-sm shadow-sm">
+                        RTK Lock: ±0.8m
+                      </div>
+                    </div>
+                    <!-- Secondary Guardian Metrics -->
+                    <div class="grid grid-cols-3 gap-2 mt-3 pt-3 border-t border-outline-variant/20 text-center">
+                      <div>
+                        <span class="font-label-sm text-label-sm text-secondary block">Speed</span>
+                        <span class="font-title-md text-title-md text-on-surface font-bold">62 <span
+                            class="font-body-sm text-body-sm font-normal">km/h</span></span>
+                      </div>
+                      <div>
+                        <span class="font-label-sm text-label-sm text-secondary block">Telemetry Sync</span>
+                        <span class="font-title-md text-title-md text-tertiary font-bold">0.12s ago</span>
+                      </div>
+                      <div>
+                        <span class="font-label-sm text-label-sm text-secondary block">Level-1 Trauma</span>
+                        <span class="font-title-md text-title-md text-on-surface font-bold">4.2 km</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Escalation Pipeline Status -->
+                <div
+                  class="mt-4 pt-3 border-t border-outline-variant/20 flex items-center justify-between font-label-sm text-label-sm">
+                  <span class="text-secondary">Emergency Handshake: <strong class="text-on-surface">Armed &amp;
+                      Standby</strong></span>
+                  <span class="text-primary font-semibold flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[16px]">network_ping</span>
+                    Carrier Uplink: Nominal
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- 2. THE REALITY OF THE ROAD (PROBLEM STATEMENT) -->
+      <section class="w-full bg-surface-container-lowest px-6 lg:px-12 py-20 border-t border-outline-variant/30">
+        <div class="max-w-7xl mx-auto">
+          <div class="max-w-3xl">
+            <span class="font-label-md text-label-md text-primary font-bold uppercase tracking-wider">The Dual-Stage
+              Safety Philosophy</span>
+            <h2 class="font-display-lg text-display-lg text-on-surface font-bold tracking-tight mt-2">
+              An accident doesn't always give you time to react.
+            </h2>
+            <p class="font-body-lg text-body-lg text-secondary mt-4 leading-relaxed">
+              Driver fatigue and micro-sleeps develop silently over highway stretches. High-impact collisions leave
+              drivers incapacitated, trapped, and unable to reach their mobile device to dial 911. GuardianDrive closes
+              the critical void between initial physiological drift and first responder dispatch.
+            </p>
+          </div>
+          <!-- Problem-Solution Impact Cards -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-14">
+            <!-- Card 1 -->
+            <div
+              class="bg-surface p-7 rounded-2xl border border-outline-variant/40 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+              <div>
+                <div
+                  class="w-12 h-12 rounded-xl bg-secondary-container flex items-center justify-center text-primary mb-6">
+                  <span class="material-symbols-outlined text-[26px]">bedtime</span>
+                </div>
+                <div
+                  class="inline-flex px-2 py-0.5 rounded bg-surface-container text-secondary font-label-sm text-label-sm uppercase font-bold mb-2">
+                  Stage 01 Vulnerability</div>
+                <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Silent Cognitive Drift</h3>
+                <p class="font-body-md text-body-md text-secondary mt-3 leading-relaxed">
+                  Driver micro-sleeps often occur without conscious realization. Eyelid closure lengthens, ocular
+                  aperture shrinks, and reaction windows dissolve into zero.
+                </p>
+              </div>
+              <div class="mt-6 pt-5 border-t border-outline-variant/30">
+                <span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider">GuardianDrive
+                  Intervention</span>
+                <p class="font-body-sm text-body-sm text-on-surface mt-1">Edge computer vision recalculates Eye Aspect
+                  Ratio (EAR) 60 times a second to trigger early cognitive acoustic chimes.</p>
+              </div>
+            </div>
+            <!-- Card 2 -->
+            <div
+              class="bg-surface p-7 rounded-2xl border border-outline-variant/40 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+              <div>
+                <div class="w-12 h-12 rounded-xl bg-error-container flex items-center justify-center text-error mb-6">
+                  <span class="material-symbols-outlined text-[26px]">car_crash</span>
+                </div>
+                <div
+                  class="inline-flex px-2 py-0.5 rounded bg-surface-container text-secondary font-label-sm text-label-sm uppercase font-bold mb-2">
+                  Stage 02 Vulnerability</div>
+                <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Incapacitated Impact</h3>
+                <p class="font-body-md text-body-md text-secondary mt-3 leading-relaxed">
+                  In severe rollovers, head-on barrier collisions, or violent deceleration (&gt;2.5G), occupants are
+                  concussed, disoriented, or physically restrained from contacting help.
+                </p>
+              </div>
+              <div class="mt-6 pt-5 border-t border-outline-variant/30">
+                <span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider">GuardianDrive
+                  Intervention</span>
+                <p class="font-body-sm text-body-sm text-on-surface mt-1">Autonomous on-device sensor fusion bypasses
+                  user action, initiating an immediate loud fail-safe countdown timer.</p>
+              </div>
+            </div>
+            <!-- Card 3 -->
+            <div
+              class="bg-surface p-7 rounded-2xl border border-outline-variant/40 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+              <div>
+                <div class="w-12 h-12 rounded-xl bg-primary-fixed flex items-center justify-center text-primary mb-6">
+                  <span class="material-symbols-outlined text-[26px]">perm_phone_msg</span>
+                </div>
+                <div
+                  class="inline-flex px-2 py-0.5 rounded bg-surface-container text-secondary font-label-sm text-label-sm uppercase font-bold mb-2">
+                  Stage 03 Vulnerability</div>
+                <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">The Information Void</h3>
+                <p class="font-body-md text-body-md text-secondary mt-3 leading-relaxed">
+                  Family members and emergency dispatchers are left guessing about crash severity, vector coordinates,
+                  and passenger status during the golden hour of trauma care.
+                </p>
+              </div>
+              <div class="mt-6 pt-5 border-t border-outline-variant/30">
+                <span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider">GuardianDrive
+                  Intervention</span>
+                <p class="font-body-sm text-body-sm text-on-surface mt-1">Automated dispatch packets relay vehicle VIN,
+                  speed delta, exact GNSS coordinates, and local hospital proximity in real-time.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- 3. HOW IT WORKS (THE 4-STAGE SAFETY PIPELINE) -->
+      <section class="w-full bg-surface px-6 lg:px-12 py-20 border-t border-outline-variant/30" id="how-it-works">
+        <div class="max-w-7xl mx-auto">
+          <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="font-label-md text-label-md text-primary font-bold uppercase tracking-wider">System
+              Pipeline</span>
+            <h2 class="font-display-lg text-display-lg text-on-surface font-bold tracking-tight mt-2">
+              The 4-Stage Autonomous Safety Loop
+            </h2>
+            <p class="font-body-lg text-body-lg text-secondary mt-3">
+              From micro-sleep detection to municipal EMS dispatch, every millisecond is orchestrated with deterministic
+              safety logic.
+            </p>
+          </div>
+          <!-- Stepped Grid 01 to 04 -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+            <!-- Step 01 -->
+            <div
+              class="bg-surface-container-lowest p-6 rounded-2xl border border-outline-variant/40 shadow-sm relative flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="font-headline-md text-headline-md text-primary font-bold">01</span>
+                  <span
+                    class="px-2 py-0.5 rounded bg-surface-container text-secondary font-label-sm text-label-sm font-semibold">Continuous</span>
+                </div>
+                <h3 class="font-title-md text-title-md text-on-surface font-bold">Monitor (In-Cabin Neural Vision)</h3>
+                <p class="font-body-md text-body-md text-secondary mt-2">
+                  High-frequency on-device computer vision analyzes eyelid closure, blink intervals, and gaze drift at
+                  60 FPS without storing or transmitting biometric video.
+                </p>
+              </div>
+              <div
+                class="mt-6 pt-4 border-t border-outline-variant/20 font-label-sm text-label-sm text-on-surface-variant flex items-center gap-2">
+                <span class="material-symbols-outlined text-[16px] text-tertiary">verified</span>
+                Zero Video Cloud Storage
+              </div>
+            </div>
+            <!-- Step 02 -->
+            <div
+              class="bg-surface-container-lowest p-6 rounded-2xl border border-outline-variant/40 shadow-sm relative flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="font-headline-md text-headline-md text-primary font-bold">02</span>
+                  <span
+                    class="px-2 py-0.5 rounded bg-surface-container text-secondary font-label-sm text-label-sm font-semibold">100Hz
+                    IMU</span>
+                </div>
+                <h3 class="font-title-md text-title-md text-on-surface font-bold">Detect (Kinematic Sensor Fusion)</h3>
+                <p class="font-body-md text-body-md text-secondary mt-2">
+                  Tri-axial accelerometers and gyroscopes monitor abrupt velocity deltas, rollover angles, and high-G
+                  impacts across lateral and longitudinal axes.
+                </p>
+              </div>
+              <div
+                class="mt-6 pt-4 border-t border-outline-variant/20 font-label-sm text-label-sm text-on-surface-variant flex items-center gap-2">
+                <span class="material-symbols-outlined text-[16px] text-primary">speed</span>
+                &gt;2.5G Threshold Detection
+              </div>
+            </div>
+            <!-- Step 03 -->
+            <div
+              class="bg-surface-container-lowest p-6 rounded-2xl border border-outline-variant/40 shadow-sm relative flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="font-headline-md text-headline-md text-tertiary font-bold">03</span>
+                  <span
+                    class="px-2 py-0.5 rounded bg-tertiary/10 text-tertiary font-label-sm text-label-sm font-bold">Fail-Safe</span>
+                </div>
+                <h3 class="font-title-md text-title-md text-on-surface font-bold">Verify (10-Second Driver Buffer)</h3>
+                <p class="font-body-md text-body-md text-secondary mt-2">
+                  Upon kinematic anomaly detection, an intense 85dB cockpit chime and visual prompt engage. Drivers have
+                  10 seconds to hit "Cancel" if safe.
+                </p>
+              </div>
+              <div
+                class="mt-6 pt-4 border-t border-outline-variant/20 font-label-sm text-label-sm text-on-surface-variant flex items-center gap-2">
+                <span class="material-symbols-outlined text-[16px] text-tertiary">timer</span>
+                False-Positive Rejection
+              </div>
+            </div>
+            <!-- Step 04 -->
+            <div
+              class="bg-surface-container-lowest p-6 rounded-2xl border border-outline-variant/40 shadow-sm relative flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="font-headline-md text-headline-md text-error font-bold">04</span>
+                  <span
+                    class="px-2 py-0.5 rounded bg-error-container text-on-error-container font-label-sm text-label-sm font-bold">Escalate</span>
+                </div>
+                <h3 class="font-title-md text-title-md text-on-surface font-bold">Alert &amp; Dispatch (Automated SOS)
+                </h3>
+                <p class="font-body-md text-body-md text-secondary mt-2">
+                  If the buffer expires unacknowledged, an encrypted emergency payload broadcasts to all assigned
+                  guardians and transmits pre-formatted CAD data to 911.
+                </p>
+              </div>
+              <div
+                class="mt-6 pt-4 border-t border-outline-variant/20 font-label-sm text-label-sm text-on-surface-variant flex items-center gap-2">
+                <span class="material-symbols-outlined text-[16px] text-error">phone_in_talk</span>
+                Direct EMS Voice Bridge
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- 4. CORE HARDWARE & EDGE ARCHITECTURE -->
+      <section class="w-full bg-surface-container-lowest px-6 lg:px-12 py-20 border-t border-outline-variant/30"
+        id="safety-architecture">
+        <div class="max-w-7xl mx-auto">
+          <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-12 gap-6">
+            <div>
+              <span class="font-label-md text-label-md text-primary font-bold uppercase tracking-wider">Mission-Critical
+                Engineering</span>
+              <h2 class="font-display-lg text-display-lg text-on-surface font-bold tracking-tight mt-2">
+                Edge Compute &amp; Sensor Fusion Architecture
+              </h2>
+              <p class="font-body-lg text-body-lg text-secondary mt-2 max-w-2xl">
+                Designed to meet ISO 26262 ASIL-D functional safety specifications. Zero reliance on cellular
+                connectivity to perform core impact classification.
+              </p>
+            </div>
+            <div
+              class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-surface-container border border-outline-variant/40">
+              <span class="material-symbols-outlined text-tertiary text-[20px]">memory</span>
+              <span class="font-label-md text-label-md text-on-surface font-semibold">TFLite Micro Runtime • NPU
+                Accelerated</span>
+            </div>
+          </div>
+          <!-- Architectural Diagram Interactive Flow Component -->
+          <div class="bg-surface rounded-2xl border border-outline-variant/40 p-6 lg:p-8 shadow-sm">
+            <div
+              class="text-center font-label-sm text-label-sm uppercase text-secondary font-bold tracking-widest mb-6">
+              End-to-End Automotive Dataflow Schematic
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 relative items-stretch">
+              <!-- Col 1: Hardware Inputs -->
+              <div
+                class="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant/40 flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between pb-3 border-b border-outline-variant/20">
+                    <span class="font-label-sm text-label-sm font-bold text-on-surface uppercase">Cabin Sensors</span>
+                    <span class="material-symbols-outlined text-primary text-[18px]">input</span>
+                  </div>
+                  <ul class="mt-4 space-y-3 font-body-sm text-body-sm text-on-surface">
+                    <li class="flex items-center justify-between p-2 rounded bg-surface-container-low">
+                      <span>In-Cabin NIR Camera</span>
+                      <strong class="font-mono text-secondary">60 FPS</strong>
+                    </li>
+                    <li class="flex items-center justify-between p-2 rounded bg-surface-container-low">
+                      <span>6-Axis IMU (Acc+Gyro)</span>
+                      <strong class="font-mono text-secondary">100 Hz</strong>
+                    </li>
+                    <li class="flex items-center justify-between p-2 rounded bg-surface-container-low">
+                      <span>Multi-Band GNSS / RTK</span>
+                      <strong class="font-mono text-secondary">10 Hz</strong>
+                    </li>
+                  </ul>
+                </div>
+                <div
+                  class="mt-4 pt-3 border-t border-outline-variant/20 text-center font-label-sm text-label-sm text-secondary">
+                  Direct Bus &amp; Camera Serial
+                </div>
+              </div>
+              <!-- Col 2: Local Edge Engine -->
+              <div
+                class="bg-surface-container-lowest p-5 rounded-xl border-2 border-primary/40 flex flex-col justify-between shadow-sm">
+                <div>
+                  <div class="flex items-center justify-between pb-3 border-b border-outline-variant/20">
+                    <span class="font-label-sm text-label-sm font-bold text-primary uppercase">Edge Safety Engine</span>
+                    <span class="material-symbols-outlined text-primary text-[18px]">developer_board</span>
+                  </div>
+                  <div class="mt-4 space-y-3 font-body-sm text-body-sm">
+                    <div class="p-2.5 rounded bg-primary-fixed/30 border border-primary-fixed">
+                      <span class="font-label-sm text-label-sm text-on-primary-fixed font-bold block">Facial Mesh
+                        Estimator</span>
+                      <span class="text-on-surface-variant font-body-sm text-body-sm">68 points eye openness &amp; head
+                        yaw</span>
+                    </div>
+                    <div class="p-2.5 rounded bg-primary-fixed/30 border border-primary-fixed">
+                      <span class="font-label-sm text-label-sm text-on-primary-fixed font-bold block">Vector Kinematics
+                        Filter</span>
+                      <span class="text-on-surface-variant font-body-sm text-body-sm">Kalman filtered jerk &amp; tilt
+                        detection</span>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="mt-4 pt-3 border-t border-outline-variant/20 text-center font-label-sm text-label-sm text-tertiary font-bold">
+                  100% Local Inference (0ms Cloud)
+                </div>
+              </div>
+              <!-- Col 3: State Classification -->
+              <div
+                class="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant/40 flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between pb-3 border-b border-outline-variant/20">
+                    <span class="font-label-sm text-label-sm font-bold text-on-surface uppercase">Dual
+                      Classification</span>
+                    <span class="material-symbols-outlined text-primary text-[18px]">alt_route</span>
+                  </div>
+                  <div class="mt-4 space-y-3 font-body-sm text-body-sm">
+                    <div class="p-2.5 rounded bg-surface-container-low border-l-4 border-l-secondary">
+                      <span class="font-label-sm text-label-sm text-on-surface font-bold block">Fatigue Path</span>
+                      <span class="text-secondary">EAR &lt; 0.20 &gt; 2.0s duration triggers progressive cabin
+                        chimes</span>
+                    </div>
+                    <div class="p-2.5 rounded bg-surface-container-low border-l-4 border-l-error">
+                      <span class="font-label-sm text-label-sm text-error font-bold block">Collision Path</span>
+                      <span class="text-secondary">Impact vector &gt; 2.5G initiates urgent 10s cancellation HUD</span>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="mt-4 pt-3 border-t border-outline-variant/20 text-center font-label-sm text-label-sm text-secondary">
+                  Deterministic Rule Engine
+                </div>
+              </div>
+              <!-- Col 4: Escalation Controller -->
+              <div
+                class="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant/40 flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between pb-3 border-b border-outline-variant/20">
+                    <span class="font-label-sm text-label-sm font-bold text-on-surface uppercase">Escalation Hub</span>
+                    <span class="material-symbols-outlined text-error text-[18px]">emergency</span>
+                  </div>
+                  <ul class="mt-4 space-y-2 font-body-sm text-body-sm text-on-surface">
+                    <li class="p-2 rounded bg-surface-container-low flex items-center gap-2">
+                      <span class="material-symbols-outlined text-[16px] text-tertiary">check_circle</span>
+                      <span>10s Driver Fail-Safe</span>
+                    </li>
+                    <li class="p-2 rounded bg-surface-container-low flex items-center gap-2">
+                      <span class="material-symbols-outlined text-[16px] text-primary">share_location</span>
+                      <span>RTK GNSS Broadcast</span>
+                    </li>
+                    <li class="p-2 rounded bg-surface-container-low flex items-center gap-2">
+                      <span class="material-symbols-outlined text-[16px] text-error">ring_volume</span>
+                      <span>Direct 911 / CAD Dispatch</span>
+                    </li>
+                  </ul>
+                </div>
+                <div
+                  class="mt-4 pt-3 border-t border-outline-variant/20 text-center font-label-sm text-label-sm text-on-surface font-semibold">
+                  Guardian Portal &amp; Emergency Hub
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Technical Feature Pillars (4 Bento Grid Items) -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+            <div class="bg-surface p-6 rounded-xl border border-outline-variant/30">
+              <div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary mb-4">
+                <span class="material-symbols-outlined text-[22px]">cloud_off</span>
+              </div>
+              <h3 class="font-title-md text-title-md text-on-surface font-bold">Edge Neural Net</h3>
+              <p class="font-body-sm text-body-sm text-secondary mt-2">
+                Zero cloud dependency. Even while passing through cellular blackspots or underground mountain passes,
+                the safety blackbox functions unimpeded.
+              </p>
+            </div>
+            <div class="bg-surface p-6 rounded-xl border border-outline-variant/30">
+              <div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary mb-4">
+                <span class="material-symbols-outlined text-[22px]">satellite_alt</span>
+              </div>
+              <h3 class="font-title-md text-title-md text-on-surface font-bold">Multi-Constellation RTK</h3>
+              <p class="font-body-sm text-body-sm text-secondary mt-2">
+                GPS, Galileo, and GLONASS sensor fusion produces sub-meter positioning accuracy so emergency responders
+                arrive at the exact highway divider.
+              </p>
+            </div>
+            <div class="bg-surface p-6 rounded-xl border border-outline-variant/30">
+              <div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary mb-4">
+                <span class="material-symbols-outlined text-[22px]">eye_tracking</span>
+              </div>
+              <h3 class="font-title-md text-title-md text-on-surface font-bold">Biometric Ocular Math</h3>
+              <p class="font-body-sm text-body-sm text-secondary mt-2">
+                Mathematical aperture computation of vertical eyelid coordinates filters normal involuntary blinks from
+                hazardous micro-sleep occurrences.
+              </p>
+            </div>
+            <div class="bg-surface p-6 rounded-xl border border-outline-variant/30">
+              <div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary mb-4">
+                <span class="material-symbols-outlined text-[22px]">health_and_safety</span>
+              </div>
+              <h3 class="font-title-md text-title-md text-on-surface font-bold">Automated CAD Bridge</h3>
+              <p class="font-body-sm text-body-sm text-secondary mt-2">
+                Generates standardized NENA-compatible CAD packets for public safety answering points with
+                pre-calculated nearest Level-1 trauma routing.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- 5. SAFETY STATE MACHINE PROGRESSION -->
+      <section class="w-full bg-surface px-6 lg:px-12 py-20 border-t border-outline-variant/30">
+        <div class="max-w-7xl mx-auto">
+          <div class="max-w-3xl mb-12">
+            <span class="font-label-md text-label-md text-primary font-bold uppercase tracking-wider">Predictable
+              Protocol Lifecycle</span>
+            <h2 class="font-display-lg text-display-lg text-on-surface font-bold tracking-tight mt-2">
+              Safety State Machine Progression
+            </h2>
+            <p class="font-body-lg text-body-lg text-secondary mt-2">
+              Deterministic states prevent spurious dispatches while guaranteeing unbreakable escalation during
+              catastrophic incidents.
+            </p>
+          </div>
+          <!-- State progression timeline track -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4">
+            <!-- State 1: Normal -->
+            <div
+              class="bg-surface-container-lowest p-5 rounded-xl border-t-4 border-t-tertiary border-x border-b border-outline-variant/30 shadow-sm flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-3">
+                  <span class="font-label-sm text-label-sm font-bold text-tertiary uppercase">State 01</span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-tertiary"></span>
+                </div>
+                <div class="font-title-md text-title-md text-on-surface font-bold">NORMAL</div>
+                <p class="font-body-sm text-body-sm text-secondary mt-2">
+                  Alertness index &gt;90%. EAR 0.31 nominal. Kinematics steady. Passive background sampling.
+                </p>
+              </div>
+              <div
+                class="mt-4 pt-3 border-t border-outline-variant/20 font-label-sm text-label-sm text-tertiary font-bold">
+                Cabin Silent
+              </div>
+            </div>
+            <!-- State 2: Drowsy -->
+            <div
+              class="bg-surface-container-lowest p-5 rounded-xl border-t-4 border-t-secondary border-x border-b border-outline-variant/30 shadow-sm flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-3">
+                  <span class="font-label-sm text-label-sm font-bold text-secondary uppercase">State 02</span>
+                  <span class="material-symbols-outlined text-secondary text-[16px]">warning</span>
+                </div>
+                <div class="font-title-md text-title-md text-on-surface font-bold">DROWSY</div>
+                <p class="font-body-sm text-body-sm text-secondary mt-2">
+                  EAR &lt;0.20 for &gt;2.0s duration. Sustained eyelid droop detected by edge vision model.
+                </p>
+              </div>
+              <div
+                class="mt-4 pt-3 border-t border-outline-variant/20 font-label-sm text-label-sm text-secondary font-bold">
+                85dB Chime Level 1
+              </div>
+            </div>
+            <!-- State 3: Cockpit Prompt -->
+            <div
+              class="bg-surface-container-lowest p-5 rounded-xl border-t-4 border-t-primary border-x border-b border-outline-variant/30 shadow-sm flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-3">
+                  <span class="font-label-sm text-label-sm font-bold text-primary uppercase">State 03</span>
+                  <span class="material-symbols-outlined text-primary text-[16px]">notification_important</span>
+                </div>
+                <div class="font-title-md text-title-md text-on-surface font-bold">WARNING</div>
+                <p class="font-body-sm text-body-sm text-secondary mt-2">
+                  Gaze deviation &gt;4.0s from road axis. Visual banner and steering haptics pulse request.
+                </p>
+              </div>
+              <div
+                class="mt-4 pt-3 border-t border-outline-variant/20 font-label-sm text-label-sm text-primary font-bold">
+                Double-Blink Verify
+              </div>
+            </div>
+            <!-- State 4: Critical Impact -->
+            <div
+              class="bg-surface-container-lowest p-5 rounded-xl border-t-4 border-t-error border-x border-b border-outline-variant/30 shadow-sm flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-3">
+                  <span class="font-label-sm text-label-sm font-bold text-error uppercase">State 04</span>
+                  <span class="material-symbols-outlined text-error text-[16px]">dangerous</span>
+                </div>
+                <div class="font-title-md text-title-md text-on-surface font-bold">CRITICAL IMPACT</div>
+                <p class="font-body-sm text-body-sm text-secondary mt-2">
+                  Accelerometer records &gt;2.5G vector spike or rollover gyro displacement.
+                </p>
+              </div>
+              <div
+                class="mt-4 pt-3 border-t border-outline-variant/20 font-label-sm text-label-sm text-error font-bold">
+                Blackbox Locked
+              </div>
+            </div>
+            <!-- State 5: 10s Buffer -->
+            <div
+              class="bg-surface-container-lowest p-5 rounded-xl border-t-4 border-t-error border-x border-b border-outline-variant/30 shadow-sm flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-3">
+                  <span class="font-label-sm text-label-sm font-bold text-error uppercase">State 05</span>
+                  <span class="material-symbols-outlined text-error text-[16px] animate-pulse">timer</span>
+                </div>
+                <div class="font-title-md text-title-md text-on-surface font-bold">10S FAIL-SAFE</div>
+                <p class="font-body-sm text-body-sm text-secondary mt-2">
+                  Cockpit audio countdown: "Are you OK? Press Cancel or SOS triggers in 10, 9..."
+                </p>
+              </div>
+              <div
+                class="mt-4 pt-3 border-t border-outline-variant/20 font-label-sm text-label-sm text-error font-bold">
+                Manual Override Window
+              </div>
+            </div>
+            <!-- State 6: Guardian Dispatch -->
+            <div
+              class="bg-surface-container-lowest p-5 rounded-xl border-t-4 border-t-primary-container border-x border-b border-outline-variant/30 shadow-sm flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-3">
+                  <span class="font-label-sm text-label-sm font-bold text-primary uppercase">State 06</span>
+                  <span class="material-symbols-outlined text-primary text-[16px]">send</span>
+                </div>
+                <div class="font-title-md text-title-md text-on-surface font-bold">DISPATCHED</div>
+                <p class="font-body-sm text-body-sm text-secondary mt-2">
+                  Telemetry bundle pushed to guardians, emergency voice bridge connected, 911 notified.
+                </p>
+              </div>
+              <div
+                class="mt-4 pt-3 border-t border-outline-variant/20 font-label-sm text-label-sm text-primary font-bold">
+                Active Multi-Party Bridge
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- 6. TRUSTED GUARDIAN & FAMILY ECOSYSTEM -->
+      <section class="w-full bg-surface-container-lowest px-6 lg:px-12 py-20 border-t border-outline-variant/30">
+        <div class="max-w-7xl mx-auto">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <!-- Text details -->
+            <div class="lg:col-span-6 space-y-6">
+              <span class="font-label-md text-label-md text-primary font-bold uppercase tracking-wider">Connected Family
+                &amp; Fleet Ring</span>
+              <h2 class="font-display-lg text-display-lg text-on-surface font-bold tracking-tight">
+                Peace of mind for the people waiting at home.
+              </h2>
+              <p class="font-body-lg text-body-lg text-secondary leading-relaxed">
+                GuardianDrive transforms everyday mobile devices into a high-reliability remote operations room.
+                Guardians receive immediate high-priority alerts with live coordinates, vehicle speed prior to event,
+                and direct one-touch communication links.
+              </p>
+              <div class="space-y-4 pt-2">
+                <div class="flex items-start gap-4">
+                  <div
+                    class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0 mt-0.5">
+                    <span class="material-symbols-outlined text-[20px]">group</span>
+                  </div>
+                  <div>
+                    <h4 class="font-title-md text-title-md text-on-surface font-bold">Hierarchical Multi-Guardian
+                      Routing</h4>
+                    <p class="font-body-md text-body-md text-secondary mt-1">
+                      Designate primary emergency contacts (e.g., spouse, parent), secondary contacts, and automated
+                      commercial fleet dispatchers.
+                    </p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-4">
+                  <div
+                    class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0 mt-0.5">
+                    <span class="material-symbols-outlined text-[20px]">local_hospital</span>
+                  </div>
+                  <div>
+                    <h4 class="font-title-md text-title-md text-on-surface font-bold">Direct EMS CAD Packet Integration
+                    </h4>
+                    <p class="font-body-md text-body-md text-secondary mt-1">
+                      Transmits pre-formatted computer-aided dispatch packets containing vehicle make, VIN, G-force
+                      impact vectors, and the nearest Level-1 trauma centers.
+                    </p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-4">
+                  <div
+                    class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0 mt-0.5">
+                    <span class="material-symbols-outlined text-[20px]">key</span>
+                  </div>
+                  <div>
+                    <h4 class="font-title-md text-title-md text-on-surface font-bold">Privacy-Preserving P2P Channels
+                    </h4>
+                    <p class="font-body-md text-body-md text-secondary mt-1">
+                      Driver cabin camera feeds are processed entirely in ephemeral RAM and never archived to corporate
+                      databases. Guardians only see safety states and telemetry.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Guardian App Mock Frame -->
+            <div class="lg:col-span-6 bg-surface p-6 rounded-2xl border border-outline-variant/40 shadow-sm">
+              <div class="bg-surface-container-lowest rounded-xl p-5 border border-outline-variant/30">
+                <!-- Simulated Phone / Tablet Header -->
+                <div class="flex items-center justify-between pb-4 border-b border-outline-variant/20">
+                  <div class="flex items-center gap-3">
+                    <div
+                      class="w-10 h-10 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-bold">
+                      SR
+                    </div>
+                    <div>
+                      <div class="font-title-md text-title-md text-on-surface font-bold">Sara Reynolds (Guardian View)
+                      </div>
+                      <div class="font-body-sm text-body-sm text-secondary">Monitoring: Mohammad R. • In Transit</div>
+                    </div>
+                  </div>
+                  <span
+                    class="px-2.5 py-1 rounded-full bg-tertiary/10 text-tertiary font-label-sm text-label-sm font-bold flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+                    LIVE SYNC
+                  </span>
+                </div>
+                <!-- Active Trip Overview Card -->
+                <div class="mt-4 p-4 rounded-lg bg-surface border border-outline-variant/20">
+                  <div class="flex items-center justify-between">
+                    <span class="font-label-sm text-label-sm text-secondary uppercase font-bold">Trip Route #1084</span>
+                    <span class="font-body-sm text-body-sm text-on-surface font-semibold">San Francisco → San
+                      Jose</span>
+                  </div>
+                  <div class="mt-3 grid grid-cols-3 gap-2 text-center">
+                    <div class="bg-surface-container-lowest p-2 rounded">
+                      <span class="font-label-sm text-label-sm text-secondary block">Speed</span>
+                      <span class="font-title-md text-title-md text-on-surface font-bold">65 mph</span>
+                    </div>
+                    <div class="bg-surface-container-lowest p-2 rounded">
+                      <span class="font-label-sm text-label-sm text-secondary block">Vigilance</span>
+                      <span class="font-title-md text-title-md text-tertiary font-bold">98% Opt</span>
+                    </div>
+                    <div class="bg-surface-container-lowest p-2 rounded">
+                      <span class="font-label-sm text-label-sm text-secondary block">Last Ping</span>
+                      <span class="font-title-md text-title-md text-on-surface font-bold">Just now</span>
+                    </div>
+                  </div>
+                </div>
+                <!-- Rapid Action Callouts -->
+                <div class="mt-4 grid grid-cols-2 gap-3">
+                  <button
+                    class="flex items-center justify-center gap-2 py-3 px-4 rounded-lg bg-surface-container hover:bg-surface-container-high transition-colors font-label-md text-label-md text-on-surface"
+                    type="button">
+                    <span class="material-symbols-outlined text-[18px] text-primary">phone</span>
+                    Voice Check-In
+                  </button>
+                  <button
+                    class="flex items-center justify-center gap-2 py-3 px-4 rounded-lg bg-surface-container hover:bg-surface-container-high transition-colors font-label-md text-label-md text-on-surface"
+                    type="button">
+                    <span class="material-symbols-outlined text-[18px] text-secondary">share_location</span>
+                    Share Live Path
+                  </button>
+                </div>
+                <!-- Escalation Simulation Banner in Card -->
+                <div
+                  class="mt-4 p-3 rounded-lg bg-surface-container flex items-center justify-between font-label-sm text-label-sm">
+                  <div class="flex items-center gap-2 text-on-surface">
+                    <span class="material-symbols-outlined text-primary text-[18px]">verified_user</span>
+                    <span>Automated 911 CAD Dispatch: Standby</span>
+                  </div>
+                  <span class="text-tertiary font-bold">Armed</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- 7. INTERACTIVE DEMO CTA & CREDENTIALS CALLOUT -->
+      <section class="w-full bg-surface px-6 lg:px-12 py-20 border-t border-outline-variant/30">
+        <div class="max-w-5xl mx-auto">
+          <div class="bg-surface-container-lowest rounded-3xl border border-outline-variant/40 p-8 lg:p-12 shadow-md">
+
+            <!-- Two-column layout on desktop -->
+            <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_340px] gap-12 lg:gap-16 items-center">
+
+              <!-- LEFT: Interactive Demo CTA -->
+              <div class="min-w-0">
+                <div
+                  class="inline-flex items-center gap-2 px-3 py-1 rounded bg-secondary-container/50 border border-secondary-container mb-4">
+                  <span class="material-symbols-outlined text-primary text-[18px]">videogame_asset</span>
+                  <span class="font-label-md text-label-md text-primary font-bold uppercase tracking-wider">
+                    Evaluation Environment
+                  </span>
+                </div>
+
+                <h2 class="font-display-lg text-display-lg text-on-surface font-bold tracking-tight">
+                  Experience the GuardianDrive Safety Engine in Real Time.
+                </h2>
+
+                <p class="font-body-lg text-body-lg text-secondary mt-4 leading-relaxed">
+                  Launch our interactive cockpit and telemetry simulator to trigger mock fatigue events, test the
+                  10-second impact fail-safe countdown, and inspect the real-time guardian escalation pipeline.
+                </p>
+
+                <div class="flex flex-wrap items-center gap-4 mt-8">
+                  <a class="inline-flex items-center justify-center gap-2 h-12 px-8 rounded-lg bg-primary-container text-on-primary font-label-lg text-label-lg hover:bg-primary transition-all shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-container"
+                    data-path="live-demo" href="#">
+                    <span class="material-symbols-outlined text-[20px]">bolt</span>
+                    Open Interactive Simulator
+                  </a>
+
+                  <a class="inline-flex items-center justify-center gap-2 h-12 px-6 rounded-lg bg-surface text-on-surface font-label-lg text-label-lg border border-outline-variant/40 hover:bg-surface-container transition-all"
+                    data-path="technology" href="#">
+                    <span class="material-symbols-outlined text-[20px] text-secondary">description</span>
+                    View Technical Specs
+                  </a>
+                </div>
+              </div>
+
+              <!-- RIGHT: Evaluation Credentials -->
+              <div class="w-full bg-surface p-5 rounded-2xl border border-outline-variant/40 shadow-sm">
+
+                <div class="flex items-center gap-2 pb-3 border-b border-outline-variant/20">
+                  <span class="material-symbols-outlined text-primary text-[20px]">badge</span>
+                  <span class="font-title-md text-title-md text-on-surface font-bold">
+                    Reviewer Sandbox Access
+                  </span>
+                </div>
+
+                <div class="mt-4 space-y-3 font-body-sm text-body-sm">
+
+                  <div class="p-2.5 rounded bg-surface-container-lowest border border-outline-variant/30">
+                    <span class="font-label-sm text-label-sm text-secondary uppercase font-bold block">
+                      Driver Cockpit Demo
+                    </span>
+                    <div class="font-mono text-on-surface text-body-sm mt-0.5">
+                      driver@guardiandrive.demo
+                    </div>
+                    <div class="font-mono text-secondary text-body-sm">
+                      driver123
+                    </div>
+                  </div>
+
+                  <div class="p-2.5 rounded bg-surface-container-lowest border border-outline-variant/30">
+                    <span class="font-label-sm text-label-sm text-secondary uppercase font-bold block">
+                      Guardian Console Demo
+                    </span>
+                    <div class="font-mono text-on-surface text-body-sm mt-0.5">
+                      guardian@guardiandrive.demo
+                    </div>
+                    <div class="font-mono text-secondary text-body-sm">
+                      guardian123
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="mt-4 text-center">
+                  <span class="font-label-sm text-label-sm text-secondary">
+                    Preloaded mock sensor feeds &amp; collision scenarios
+                  </span>
+                </div>
+
+              </div>
+
+            </div>  
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer class="w-full bg-surface-container-lowest border-t border-outline-variant/40 pt-16 pb-12">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 pb-12 border-b border-outline-variant/30">
+        <div class="md:col-span-5 flex flex-col justify-between pr-4">
+          <div class="space-y-4">
+            <div class="flex items-center gap-space-sm">
+              <div class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center text-on-primary">
+                <span class="material-symbols-outlined text-[20px]">verified_user</span>
+              </div><span class="font-headline-sm text-headline-sm text-on-surface font-bold">GuardianDrive</span>
+            </div>
+            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-sm font-normal">Technology that watches
+              when you can't.</p>
+            <p class="font-body-sm text-body-sm text-secondary max-w-sm">High-fidelity driver monitoring, sub-second
+              telemetry vectors, and autonomous collision response pipelines.</p>
+          </div>
+        </div>
+        <div class="md:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-6">
+          <div class="flex flex-col space-y-3"><span
+              class="font-label-md text-label-md text-on-surface uppercase tracking-wider">Platform</span><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="how-it-works" href="#">Product Overview</a><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="technology" href="#">Edge Telemetry</a><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="safety-architecture" href="#">Safety Protocol</a><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="live-demo" href="#">Live Simulation</a></div>
+          <div class="flex flex-col space-y-3"><span
+              class="font-label-md text-label-md text-on-surface uppercase tracking-wider">Technical</span><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="safety-architecture" href="#">Architecture Specs</a><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="technology" href="#">Hardware Integrations</a><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="overview" href="#">API Documentation</a><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="overview" href="#">SDK Packages</a></div>
+          <div class="flex flex-col space-y-3"><span
+              class="font-label-md text-label-md text-on-surface uppercase tracking-wider">Compliance</span><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="safety-architecture" href="#">ISO 26262 ASIL-D</a><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="overview" href="#">Privacy Policy</a><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="overview" href="#">System Status</a><a
+              class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+              data-path="overview" href="#">Operations Center</a></div>
+        </div>
+      </div>
+      <div class="pt-8 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex flex-wrap items-center gap-3">
+          <div
+            class="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-surface-container border border-outline-variant/40">
+            <span class="material-symbols-outlined text-[16px] text-tertiary">shield_lock</span><span
+              class="font-label-sm text-label-sm text-on-surface-variant font-bold tracking-tight">ISO 26262
+              CERTIFIED</span>
+          </div>
+          <div
+            class="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-surface-container border border-outline-variant/40">
+            <span class="material-symbols-outlined text-[16px] text-primary">lock</span><span
+              class="font-label-sm text-label-sm text-on-surface-variant font-bold tracking-tight">AES-256 TELEMETRY
+              ENCRYPTION</span>
+          </div>
+          <div
+            class="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-surface-container border border-outline-variant/40">
+            <span class="material-symbols-outlined text-[16px] text-tertiary">memory</span><span
+              class="font-label-sm text-label-sm text-on-surface-variant font-bold tracking-tight">EDGE NEURAL NETWORK
+              v4.2</span>
+          </div>
+        </div>
+        <div class="font-body-sm text-body-sm text-secondary">© 2026 GuardianDrive Technologies Inc. All rights
+          reserved.</div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
