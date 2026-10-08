@@ -1,0 +1,57 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <!-- Premium graphite background -->
+        <linearGradient id="appGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#1C1C1E" />
+            <stop offset="100%" stop-color="#303030" />
+        </linearGradient>
+
+        <!-- Very subtle Apple-like surface highlight -->
+        <linearGradient id="gloss" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.10" />
+            <stop offset="45%" stop-color="#FFFFFF" stop-opacity="0.025" />
+            <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" />
+        </linearGradient>
+
+        <!-- Soft safety green -->
+        <linearGradient id="safetyMark" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#B8DFC7" />
+            <stop offset="100%" stop-color="#7FAF91" />
+        </linearGradient>
+    </defs>
+
+    <!-- App Icon Background -->
+    <rect width="1024" height="1024" fill="url(#appGradient)" />
+
+    <!-- Subtle premium highlight -->
+    <rect width="1024" height="1024" fill="url(#gloss)" />
+
+    <!-- DrowsyGuard Logo Mark -->
+    <g transform="translate(187, 187) scale(6.5)">
+
+        <!-- Protection Pillar -->
+        <rect
+            x="18.5"
+            y="15"
+            width="16"
+            height="70"
+            rx="8"
+            fill="url(#safetyMark)" />
+
+        <!-- Monitoring / Radar Arc -->
+        <path
+            d="M 46.5 23 A 27 27 0 0 1 46.5 77"
+            fill="none"
+            stroke="#9CC9AA"
+            stroke-width="16"
+            stroke-linecap="round" />
+
+        <!-- Focus / Driver Attention Core -->
+        <circle
+            cx="50"
+            cy="50"
+            r="7.5"
+            fill="#E8F3EB" />
+
+    </g>
+</svg>
